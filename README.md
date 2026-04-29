@@ -1,179 +1,271 @@
 # Homework
 
-## Topic 6: Arrays and Object Methods
+## Topic 8: Iterative Array Methods
 
 ---
 
-## Task 1. Packing Goods
+## Task 1: User Names
 
-**COMPLETE THIS TASK IN THE FILE `task-1.js`**
+Work on this task in the file `task-1.js`.
 
-Write a function `isEnoughCapacity(products, containerSize)` that determines whether all goods will fit into a container.
+Write an arrow function `getUserNames(users)` that takes one parameter `users` — an array of user objects.
 
-The function has two parameters:
+The function should return an array of all user names (the `name` property) from the `users` array.
 
-* `products` — an object where keys are product names and values are their quantities. For example: `{ apples: 2, grapes: 4 }`.
-* `containerSize` — a number representing the maximum number of product units the container can hold.
-
-The function should return the result of checking whether all goods will fit into the container. That is, calculate the total number of items in the `products` object and return `true` if it is less than or equal to `containerSize`, otherwise return `false`.
-
-Use the code below after declaring your function to verify its correctness. The results of the function calls will be logged to the console.
+Use the code below after your function declaration to verify that it works correctly. The results of the function calls will be printed to the console.
 
 ```js
 console.log(
-  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
-
-console.log(
-  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
-
-console.log(
-  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-); // true
-
-console.log(
-  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-); // false
-```
-
-Leave this code for mentor review.
-
-### What the mentor will check:
-
-* The function `isEnoughCapacity(products, containerSize)` is declared
-* `isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)` returns `true`
-* `isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)` returns `false`
-* `isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)` returns `true`
-* `isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)` returns `false`
-
----
-
-## Task 2. Calorie Calculation
-
-**COMPLETE THIS TASK IN THE FILE `task-2.js`**
-
-Write a function `calcAverageCalories(days)` that returns the average daily number of calories consumed by an athlete during a week.
-
-The function expects one parameter:
-
-* `days` — an array of objects. Each object describes a day of the week and the number of calories (`calories`) consumed on that day.
-
-Use the code below after declaring your function to verify correctness. The results will be logged to the console.
-
-```js
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 3010 },
-    { day: "tuesday", calories: 3200 },
-    { day: "wednesday", calories: 3120 },
-    { day: "thursday", calories: 2900 },
-    { day: "friday", calories: 3450 },
-    { day: "saturday", calories: 3280 },
-    { day: "sunday", calories: 3300 }
+  getUserNames([
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      balance: 2811
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      balance: 3821
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      balance: 3793
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      balance: 2278
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      balance: 3951
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      balance: 1498
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      balance: 2764
+    },
   ])
-); // 3180
-
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 2040 },
-    { day: "tuesday", calories: 2270 },
-    { day: "wednesday", calories: 2420 },
-    { day: "thursday", calories: 1900 },
-    { day: "friday", calories: 2370 },
-    { day: "saturday", calories: 2280 },
-    { day: "sunday", calories: 2610 }
-  ])
-); // 2270
-
-console.log(
-  calcAverageCalories([])
-); // 0
+); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 ```
 
 Leave this code for mentor review.
 
-### What the mentor will check:
+### Mentor checklist:
 
-* The function `calcAverageCalories(days)` is declared
-
-* The following call returns `3180`:
-
-```js
-calcAverageCalories([
-  { day: "monday", calories: 3010 },
-  { day: "tuesday", calories: 3200 },
-  { day: "wednesday", calories: 3120 },
-  { day: "thursday", calories: 2900 },
-  { day: "friday", calories: 3450 },
-  { day: "saturday", calories: 3280 },
-  { day: "sunday", calories: 3300 }
-]);
-```
-
-* The following call returns `2270`:
-
-```js
-calcAverageCalories([
-  { day: "monday", calories: 2040 },
-  { day: "tuesday", calories: 2270 },
-  { day: "wednesday", calories: 2420 },
-  { day: "thursday", calories: 1900 },
-  { day: "friday", calories: 2370 },
-  { day: "saturday", calories: 2280 },
-  { day: "sunday", calories: 2610 }
-]);
-```
-
-* The following call returns `0`:
-
-```js
-calcAverageCalories([]);
-```
+* The variable `getUserNames` is declared
+* `getUserNames` is assigned an arrow function with parameter `(users)`
+* The `map()` method is used to iterate over `users`
+* The function returns the correct array of names
+* The function works correctly with valid random inputs
 
 ---
 
-## Task 3. Player Profile
+## Task 2: Users with a Friend
 
-**COMPLETE THIS TASK IN THE FILE `task-3.js`**
+Work on this task in the file `task-2.js`.
 
-The `profile` object describes a user's profile on a gaming platform. It contains the username and the number of active hours (`playTime`) spent in the game.
+Write an arrow function `getUsersWithFriend(users, friendName)` that takes two parameters:
 
-```js
-const profile = {
-  username: "Jacob",
-  playTime: 300,
-};
-```
+* `users` — an array of user objects
+* `friendName` — the name of a friend to search for
 
-Extend the `profile` object with methods to work with its properties:
+The function should return an array of all users who have a friend with the name `friendName`.
+Each user's friends are stored in the `friends` property.
 
-* `changeUsername(newName)` — takes a string (`newName`) and updates the `username` property. Does not return anything.
-* `updatePlayTime(hours)` — takes a number (`hours`) and increases the `playTime` by this value. Does not return anything.
-* `getInfo()` — returns a string in the format:
-  `<Username> has <amount> active hours!`
-  where `<Username>` is the profile name and `<amount>` is the number of hours played.
+If no users have such a friend, return an empty array.
 
-Use the code below after declaring your object to verify correctness:
+### Tips:
+
+* Use the `filter()` method to create a new array with matching elements
+* Use the `includes()` method to check if `friends` contains `friendName`
+
+Use the code below to test your function:
 
 ```js
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+const allUsers = [
+  {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"]
+  },
+  {
+    name: "Sharlene Bush",
+    friends: ["Briana Decker", "Sharron Pace"]
+  },
+  {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
+  },
+  {
+    name: "Elma Head",
+    friends: ["Goldie Gentry", "Aisha Tran"]
+  },
+  {
+    name: "Carey Barr",
+    friends: ["Jordan Sampson", "Eddie Strong"]
+  },
+  {
+    name: "Blackburn Dotson",
+    friends: ["Jacklyn Lucas", "Linda Chapman"]
+  },
+  {
+    name: "Sheree Anthony",
+    friends: ["Goldie Gentry", "Briana Decker"]
+  }
+];
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+console.log(getUsersWithFriend(allUsers, "Briana Decker"));
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+console.log(getUsersWithFriend(allUsers, "Adrian Cross")); // []
 ```
 
 Leave this code for mentor review.
 
-### What the mentor will check:
+### Mentor checklist:
 
-* The variable `profile` is declared
-* `profile` is an object with properties: `username`, `playTime`, `getInfo`, `changeUsername`, `updatePlayTime`
-* `getInfo` is a function
-* `changeUsername` is a function
-* `updatePlayTime` is a function
-* The `this` keyword is used inside object methods to access properties
+* The variable `getUsersWithFriend` is declared
+* It is an arrow function with parameters `(users, friendName)`
+* The `filter()` method is used
+* Returns correct users for "Briana Decker" and "Goldie Gentry"
+* Returns an empty array when no matches are found
+* Works correctly with valid random inputs
+
+---
+
+## Task 3: Sort by Number of Friends
+
+Work on this task in the file `task-3.js`.
+
+Write an arrow function `sortByDescendingFriendCount(users)` that takes one parameter `users` — an array of user objects.
+
+The function should return a new array of users sorted in descending order by the number of their friends (`friends` property).
+
+Use the code below to test your function:
+
+```js
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
+    }
+  ])
+);
+```
+
+Leave this code for mentor review.
+
+### Mentor checklist:
+
+* The variable `sortByDescendingFriendCount` is declared
+* It is an arrow function with parameter `(users)`
+* The `toSorted()` method is used
+* Returns a new array sorted by descending number of friends
+* Works correctly with valid random inputs
+
+---
+
+## Task 4: Total Balance
+
+Write an arrow function `getTotalBalanceByGender(users, gender)` that takes two parameters:
+
+* `users` — an array of user objects
+* `gender` — a string representing gender
+
+The function should use a chain of methods and return the total balance (`balance` property) of users whose `gender` matches the given parameter.
+
+Use the code below to test your function:
+
+```js
+const clients = [
+  {
+    name: "Moore Hensley",
+    gender: "male",
+    balance: 2811
+  },
+  {
+    name: "Sharlene Bush",
+    gender: "female",
+    balance: 3821
+  },
+  {
+    name: "Ross Vazquez",
+    gender: "male",
+    balance: 3793
+  },
+  {
+    name: "Elma Head",
+    gender: "female",
+    balance: 2278
+  },
+  {
+    name: "Carey Barr",
+    gender: "male",
+    balance: 3951
+  },
+  {
+    name: "Blackburn Dotson",
+    gender: "male",
+    balance: 1498
+  },
+  {
+    name: "Sheree Anthony",
+    gender: "female",
+    balance: 2764
+  }
+];
+
+console.log(getTotalBalanceByGender(clients, "male")); // 12053
+console.log(getTotalBalanceByGender(clients, "female")); // 8863
+```
+
+Leave this code for mentor review.
+
+### Mentor checklist:
+
+* The variable `getTotalBalanceByGender` is declared
+* It is an arrow function with parameters `(users, gender)`
+* A correct method chain is used
+* The `users` array is not modified
+* Returns `12053` for "male"
+* Returns `8863` for "female"
+* Works correctly with valid random inputs
 
